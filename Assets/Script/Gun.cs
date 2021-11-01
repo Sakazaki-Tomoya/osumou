@@ -31,6 +31,8 @@ public class Gun : MonoBehaviour
             bullets.GetComponent<Rigidbody>().AddForce(force);
 
             bullets.transform.position = gunbarrel.position;
+
+            Destroy(bullets, 1.0f);
         }
     }
 }

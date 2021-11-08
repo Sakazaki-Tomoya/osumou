@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff599da85d79e341899cfc8c2502cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1456902058}
+  bullet: {fileID: 2890961933195755643, guid: 180698ced78b4874caef5e532135120c, type: 3}
   gunbarrel: {fileID: 1805374447}
   speed: 100
 --- !u!114 &284627421
@@ -286,7 +286,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 36
   m_CollisionDetection: 0
 --- !u!65 &284627424
 BoxCollider:
@@ -301,6 +301,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &284627425
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284627416}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &327565387
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936960453064924323, guid: 180698ced78b4874caef5e532135120c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 180698ced78b4874caef5e532135120c, type: 3}
@@ -967,12 +994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea47f31fa3aa0f7469b137aca9502aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1456902058 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2890961933195755643, guid: 180698ced78b4874caef5e532135120c,
-    type: 3}
-  m_PrefabInstance: {fileID: 357641513}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1666482298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1273,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811268186}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2058960186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5262263093676901342, guid: f18833abcb490ce46aa9adf64a40b27b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6691859233751508774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &2058960190
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058960186}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.585, y: 0.5, z: 2.03}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2.01, y: 0.9, z: -1.53}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1853448096094425941
 PrefabInstance:
   m_ObjectHideFlags: 0

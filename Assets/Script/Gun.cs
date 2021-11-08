@@ -32,7 +32,7 @@ public class Gun : MonoBehaviour
 
             bullets.transform.position = gunbarrel.position;
 
-            Destroy(bullets, 1.0f);
+            //Destroy(bullets, 1.0f);
         }
     }
 }

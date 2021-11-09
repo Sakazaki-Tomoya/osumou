@@ -6,7 +6,7 @@ public class Buff : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, 10, 30), ForceMode.VelocityChange);
+        other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, 10), ForceMode.VelocityChange);
     }
 
     // Start is called before the first frame update

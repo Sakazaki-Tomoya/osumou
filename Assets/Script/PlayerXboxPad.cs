@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerXboxPad : MonoBehaviour
 {
+    public float speed;
+
     Transform cameraTransform;
     void Start()
     {
@@ -26,19 +28,25 @@ public class PlayerXboxPad : MonoBehaviour
         // 右スティックの縦の傾き
         var vr = Input .GetAxis("Vertical_R");
 
-        var cameraForward = Vector3.Scale(cameraTransform.forward, new Vector3(1, 0, 1)).normalized;
+        //var cameraForward = Vector3.Scale(cameraTransform.forward, new Vector3(1, 0, 1)).normalized;
 
         //Lスティックが倒れていれば、移動
-        if (hl != 0 || vl != 0)
-        {
-            Vector3 direction = cameraForward * vl + cameraTransform.right * hl;
-            agent = direction * Time.deltaTime;
-        }
+        var cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 0)).normalized;
+        Vector3 direction = cameraForward * Input.GetAxis("Vertical_L") +
+                Camera.main.transform.right * Input.GetAxis("Horizontal_L");
+
+        //if (hl != 0 || vl != 0)
+        //{
+        //    //var direction = new Vector3(hl, 0, hl);
+        //    Vector3 direction = cameraForward * vl + cameraTransform.right * hl;
+        //    agent = direction * Time.deltaTime;
+        //}
         //Rスティックが倒れていれば、倒れている方向を向く
         if (hr != 0 || vr != 0)
         {
-            Vector3 direction = cameraForward * vr + cameraTransform.right * hr;
-            transform.localRotation = Quaternion.LookRotation(direction);
+            var direction2 = new Vector3(hr, 0, vr);
+            //Vector3 direction = cameraForward * vr + cameraTransform.right * hr;
+            transform.localRotation = Quaternion.LookRotation(direction2);
         }
     }
 }

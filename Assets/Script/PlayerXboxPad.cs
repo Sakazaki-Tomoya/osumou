@@ -14,8 +14,6 @@ public class PlayerXboxPad : MonoBehaviour
 
     void Update()
     {
-        Vector3 agent;
-
         // 左スティックの横の傾き
         var hl = Input.GetAxis("Horizontal_L");
 
@@ -28,19 +26,20 @@ public class PlayerXboxPad : MonoBehaviour
         // 右スティックの縦の傾き
         var vr = Input .GetAxis("Vertical_R");
 
-        //var cameraForward = Vector3.Scale(cameraTransform.forward, new Vector3(1, 0, 1)).normalized;
+        var cameraForward = Vector3.Scale(cameraTransform.forward, new Vector3(1, 0, 1)).normalized;
 
         //Lスティックが倒れていれば、移動
-        var cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 0)).normalized;
-        Vector3 direction = cameraForward * Input.GetAxis("Vertical_L") +
-                Camera.main.transform.right * Input.GetAxis("Horizontal_L");
+        //var cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 0)).normalized;
+        //Vector3 direction = cameraForward * Input.GetAxis("Vertical_L") +
+        //        Camera.main.transform.right * Input.GetAxis("Horizontal_L");
 
-        //if (hl != 0 || vl != 0)
-        //{
-        //    //var direction = new Vector3(hl, 0, hl);
-        //    Vector3 direction = cameraForward * vl + cameraTransform.right * hl;
-        //    agent = direction * Time.deltaTime;
-        //}
+        if (hl != 0 || vl != 0)
+        {
+            var direction = new Vector3(hl, 0, vl);
+            //Vector3 direction = cameraForward * vl + cameraTransform.right * hl;
+            direction = transform.TransformDirection(direction);
+            direction *= speed;
+        }
         //Rスティックが倒れていれば、倒れている方向を向く
         if (hr != 0 || vr != 0)
         {

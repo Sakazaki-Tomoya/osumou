@@ -19,11 +19,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         float inputX = Input.GetAxis("Horizontal");
-        float inputZ = Input.GetAxis("Vertical");
+        float inputY = Input.GetAxis("Vertical");
         float moveX = inputX * moveSpeed * Time.deltaTime;
-        //float moveZ = inputZ * moveSpeed * Time.deltaTime;
+        float moveY = inputY * moveSpeed * Time.deltaTime;
 
-        transform.Translate(moveX, 0f, 0f);
+        transform.Translate(moveX, 0f, moveY);
 
         //        if(isKasoku == true)
         //        {

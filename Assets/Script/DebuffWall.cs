@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DebuffWall : MonoBehaviour
 {
-    public GameObject effectPrefab;
     private PlayerXboxPad player;
     private Player2 player2;
 

@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f12e1f02e488c4698fe45161049492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0
+  Speed: 10
 --- !u!114 &562128852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,11 +933,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 562128844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff599da85d79e341899cfc8c2502cef, type: 3}
+  m_Script: {fileID: 11500000, guid: 391068f73332a05439b2563d857eeadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1456902058}
-  gunbarrel: {fileID: 1042221156}
+  gunbarrel2: {fileID: 1042221156}
   speed: 100
 --- !u!1 &671962088
 GameObject:

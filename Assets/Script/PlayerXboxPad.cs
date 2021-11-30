@@ -24,7 +24,7 @@ public class PlayerXboxPad : MonoBehaviour
         var hr = Input.GetAxis("Horizontal_R");
 
         // 右スティックの縦の傾き
-        var vr = Input .GetAxis("Vertical_R");
+        var vr = Input.GetAxis("Vertical_R");
 
         var cameraForward = Vector3.Scale(cameraTransform.forward, new Vector3(1, 0, 1)).normalized;
 

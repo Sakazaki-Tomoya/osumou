@@ -10,29 +10,37 @@ public class Gun : MonoBehaviour
 
     public float speed = 100;
 
+    private float shotInterval;
+
+    private Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
+
 
     // Update is called once per frame
     void Update()
     {
         float tri = Input.GetAxis("L_R_Trigger");
-        if(tri < 0)
+        if (bullet != null)
         {
-            GameObject bullets = Instantiate(bullet) as GameObject;
+            shotInterval += 30;
 
-            Vector3 force;
+            if (tri < 0)
+            {
+                GameObject bullets = (GameObject)Instantiate(bullet);
 
-            force = this.gameObject.transform.forward * speed;
+                Vector3 force;
 
-            bullets.GetComponent<Rigidbody>().AddForce(force);
+                force = this.gameObject.transform.forward * speed;
 
-            bullets.transform.position = gunbarrel.position;
+                bullets.GetComponent<Rigidbody>().AddForce(force);
 
-            //Destroy(bullets, 1.0f);
+                bullets.transform.position = gunbarrel.position;
+            }
         }
     }
 }

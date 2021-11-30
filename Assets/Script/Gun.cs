@@ -27,12 +27,10 @@ public class Gun : MonoBehaviour
         float tri = Input.GetAxis("L_R_Trigger");
         if (bullet != null)
         {
-            shotInterval += 1;
+            shotInterval += 30;
 
             if (tri < 0)
             {
-                
-
                 GameObject bullets = (GameObject)Instantiate(bullet);
 
                 Vector3 force;

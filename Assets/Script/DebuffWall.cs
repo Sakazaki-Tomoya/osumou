@@ -35,6 +35,9 @@ public class DebuffWall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        void OnCollisionEnter(Collider other)
+        {
+            Debug.Log("しびれた！");
+        }
     }
 }

@@ -5,16 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
-    public int KasokuTime = 3;
+    //public int KasokuTime = 3;
 
-    private Rigidbody rb = null;
-    private string Buff = "Buff";
+    //private Rigidbody rb = null;
+    //private string Buff = "Buff";
     // Start is called before the first frame update
     void Start()
     {
     }
 
-    private bool isKasoku = false;
+    //private bool isKasoku = false;
     // Update is called once per frame
     void Update()
     {

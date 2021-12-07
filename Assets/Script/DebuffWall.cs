@@ -20,8 +20,8 @@ public class DebuffWall : MonoBehaviour
             xbox2 = collision.gameObject.GetComponent<Xbox2>();
             player.enabled = false;
             xbox.enabled = false;
-            player2.enabled = false;
-            xbox2.enabled = false;
+            //player2.enabled = false;
+            //xbox2.enabled = false;
 
             //二秒後にPlayerが動けるようにする
             Invoke("StopOff", 2.0f); 
@@ -33,8 +33,8 @@ public class DebuffWall : MonoBehaviour
     {
         player.enabled = true;
         xbox.enabled = true;
-        player2.enabled = true;
-        xbox2.enabled = true;
+        //player2.enabled = true;
+        //xbox2.enabled = true;
     }
 
     // Start is called before the first frame update

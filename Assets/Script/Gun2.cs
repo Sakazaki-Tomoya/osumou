@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour
+public class Gun2 : MonoBehaviour
 {
-    public GameObject bullet;
+    public GameObject bullet2;
 
-    public Transform gunbarrel;
+    public Transform gunbarrel2;
 
     public float speed = 100;
 
@@ -32,15 +32,16 @@ public class Gun : MonoBehaviour
             countdown -= Time.deltaTime;
             count = (int)countdown;
         }
-        if(countdown <= 0) { 
-        float tri = Input.GetAxis("L_R_Trigger");
-            if (bullet != null)
+        if (countdown <= 0)
+        {
+            float tri = Input.GetAxis("L_R_Trigger2");
+            if (bullet2 != null)
             {
-                shotInterval += 30;
+                shotInterval += 1;
 
                 if (tri < 0)
                 {
-                    GameObject bullets = (GameObject)Instantiate(bullet);
+                    GameObject bullets = (GameObject)Instantiate(bullet2);
 
                     Vector3 force;
 
@@ -48,7 +49,7 @@ public class Gun : MonoBehaviour
 
                     bullets.GetComponent<Rigidbody>().AddForce(force);
 
-                    bullets.transform.position = gunbarrel.position;
+                    bullets.transform.position = gunbarrel2.position;
                 }
             }
         }

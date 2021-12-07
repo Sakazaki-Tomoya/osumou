@@ -8,7 +8,7 @@ public class CountDown : MonoBehaviour
 {
     public Text timeTexts;
     public Text countDown;
-    float totalTime = 10;
+    float totalTime = 63;
     int retime;
     float countdown = 3f;
     int count;
@@ -39,6 +39,9 @@ public class CountDown : MonoBehaviour
             {
                 SceneManager.LoadScene("result");
             }
+        }
+        if(totalTime <= 0)
+        {
         }
     }
 }

@@ -40,8 +40,7 @@ public class CountDown : MonoBehaviour
                 SceneManager.LoadScene("result");
             }
         }
-        if(totalTime <= 0)
-        {
-        }
+
+        
     }
 }

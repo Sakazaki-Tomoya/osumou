@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDestroy : MonoBehaviour
 {
     //Rigidbody rb;
-    //public GameObject Player;
+    public GameObject Player;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,12 @@ public class PlayerDestroy : MonoBehaviour
         Debug.Log("衝突したオブジェクト：" + gameObject.name);
         Debug.Log("衝突されたオブジェクト：" + collision.gameObject.name);
 
-        Destroy(collision.gameObject);
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("result");
+        }
 
+        
     }
 }

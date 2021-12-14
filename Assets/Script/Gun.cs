@@ -10,7 +10,9 @@ public class Gun : MonoBehaviour
 
     public float speed = 100;
 
-    private float shotInterval;
+    private float timeBetweenShot = 0.35f;
+
+    private float timer;
 
     private Rigidbody rb;
 
@@ -32,22 +34,22 @@ public class Gun : MonoBehaviour
             countdown -= Time.deltaTime;
             count = (int)countdown;
         }
+
+        timer += Time.deltaTime;
+
         if(countdown <= 0) { 
         float tri = Input.GetAxis("L_R_Trigger");
             if (bullet != null)
             {
-                shotInterval += 30;
 
-                if (tri < 0)
+                if (tri < 0 && timer > timeBetweenShot)
                 {
+                    timer = 0.0f;
+
                     GameObject bullets = (GameObject)Instantiate(bullet);
-
                     Vector3 force;
-
                     force = this.gameObject.transform.forward * speed;
-
                     bullets.GetComponent<Rigidbody>().AddForce(force);
-
                     bullets.transform.position = gunbarrel.position;
                 }
             }

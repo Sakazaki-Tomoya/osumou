@@ -37,7 +37,7 @@ public class CountDown : MonoBehaviour
             timeTexts.text = retime.ToString();
             if(retime == 0)
             {
-                SceneManager.LoadScene("result");
+                SceneManager.LoadScene("Draw");
             }
         }
 

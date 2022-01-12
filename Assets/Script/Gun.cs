@@ -8,13 +8,11 @@ public class Gun : MonoBehaviour
 
     public Transform gunbarrel;
 
-    public float speed = 100;
+    public float speed;
 
     private float timeBetweenShot = 0.35f;
 
     private float timer;
-
-    private Rigidbody rb;
 
     float countdown = 3f;
 
@@ -23,7 +21,6 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -47,9 +44,11 @@ public class Gun : MonoBehaviour
                     timer = 0.0f;
 
                     GameObject bullets = (GameObject)Instantiate(bullet);
-                    Vector3 force;
-                    force = this.gameObject.transform.forward * speed;
-                    bullets.GetComponent<Rigidbody>().AddForce(force);
+                    Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+                    bulletRb.AddForce(transform.forward * speed);
+                    //Vector3 force;
+                    //force = this.gameObject.transform.forward * speed;
+                    //bullets.GetComponent<Rigidbody>().AddForce(force);
                     bullets.transform.position = gunbarrel.position;
                 }
             }

@@ -41,15 +41,12 @@ public class Gun2 : MonoBehaviour
 
                 if (tri < 0)
                 {
-                    GameObject bullets = (GameObject)Instantiate(bullet2);
-
-                    Vector3 force;
-
-                    force = this.gameObject.transform.forward * speed;
-
-                    bullets.GetComponent<Rigidbody>().AddForce(force);
-
-                    bullets.transform.position = gunbarrel2.position;
+                    GameObject bullets = (GameObject)Instantiate(bullet2, gunbarrel2.position, gunbarrel2.transform.rotation);
+                    Rigidbody bulletRb = bullets.GetComponent<Rigidbody>();
+                    bulletRb.AddForce(transform.forward * speed);
+                    //Vector3 force;
+                    //force = this.gameObject.transform.forward * speed;
+                    //bullets.GetComponent<Rigidbody>().AddForce(force);
                 }
             }
         }

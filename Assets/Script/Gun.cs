@@ -43,13 +43,12 @@ public class Gun : MonoBehaviour
                 {
                     timer = 0.0f;
 
-                    GameObject bullets = (GameObject)Instantiate(bullet);
-                    Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+                    GameObject bullets = (GameObject)Instantiate(bullet, gunbarrel.position, gunbarrel.transform.rotation);
+                    Rigidbody bulletRb = bullets.GetComponent<Rigidbody>();
                     bulletRb.AddForce(transform.forward * speed);
                     //Vector3 force;
                     //force = this.gameObject.transform.forward * speed;
                     //bullets.GetComponent<Rigidbody>().AddForce(force);
-                    bullets.transform.position = gunbarrel.position;
                 }
             }
         }

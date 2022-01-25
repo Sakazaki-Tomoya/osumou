@@ -18,9 +18,14 @@ public class Gun : MonoBehaviour
 
     int count;
 
+    public AudioClip sound1;
+
+    AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -46,9 +51,6 @@ public class Gun : MonoBehaviour
                     GameObject bullets = (GameObject)Instantiate(bullet, gunbarrel.position, gunbarrel.transform.rotation);
                     Rigidbody bulletRb = bullets.GetComponent<Rigidbody>();
                     bulletRb.AddForce(transform.forward * speed);
-                    //Vector3 force;
-                    //force = this.gameObject.transform.forward * speed;
-                    //bullets.GetComponent<Rigidbody>().AddForce(force);
                 }
             }
         }

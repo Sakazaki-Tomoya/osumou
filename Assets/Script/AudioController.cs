@@ -27,4 +27,13 @@ public class AudioController : MonoBehaviour
             audioSource.PlayOneShot(sound1);
         }
     }
+    //デバフの壁
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            audioSource.PlayOneShot(sound2);
+        }
+    }
+
 }

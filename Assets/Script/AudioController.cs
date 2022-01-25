@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    public AudioClip sound1;
-    public AudioClip sound2;
-    public AudioClip sound3;
-    public AudioClip sound4;
+    public AudioClip Gunfire;
+    public AudioClip ElectricWall;
+    public AudioClip none1;
+    public AudioClip none2;
 
     AudioSource audioSource;
 
@@ -24,7 +24,7 @@ public class AudioController : MonoBehaviour
         float tri = Input.GetAxis("L_R_Trigger");
         if (tri < 0)
         {
-            audioSource.PlayOneShot(sound1);
+            audioSource.PlayOneShot(Gunfire);
         }
     }
     //デバフの壁
@@ -32,7 +32,7 @@ public class AudioController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            audioSource.PlayOneShot(sound2);
+            audioSource.PlayOneShot(ElectricWall);
         }
     }
 

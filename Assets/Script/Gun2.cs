@@ -44,9 +44,6 @@ public class Gun2 : MonoBehaviour
                     GameObject bullets = (GameObject)Instantiate(bullet2, gunbarrel2.position, gunbarrel2.transform.rotation);
                     Rigidbody bulletRb = bullets.GetComponent<Rigidbody>();
                     bulletRb.AddForce(transform.forward * speed);
-                    //Vector3 force;
-                    //force = this.gameObject.transform.forward * speed;
-                    //bullets.GetComponent<Rigidbody>().AddForce(force);
                 }
             }
         }
